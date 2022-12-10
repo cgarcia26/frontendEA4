@@ -92,7 +92,7 @@
 
                 this.rol = localStorage.getItem('rol')
 
-                if( this.rol == 3){
+                if( this.rol == 1){
                     return true
                 }else{
                     return false

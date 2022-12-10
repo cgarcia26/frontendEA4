@@ -6,11 +6,11 @@
     <form @submit.prevent="submitUser">
         <div class="mb-3">
             <label for="email" class="form-label">Email</label>
-            <input type="email" v-model="user.email" class="form-control" id="email" aria-describedby="email">
+            <input type="email" v-model="user.email" class="form-control" id="email" aria-describedby="email" required>
         </div>
         <div class="mb-3">
             <label for="password" class="form-label">Password</label>
-            <input type="password" v-model="user.password" class="form-control" id="password">
+            <input type="password" v-model="user.password" class="form-control" id="password" required>
         </div>
         <button type="submit" class="btn btn-primary">Ingresar</button>
     </form>
@@ -20,8 +20,8 @@
         data(){
             return {
                 user: {
-                    email: null,
-                    password: null
+                    email: '',
+                    password: ''
                 }
             }
         },
@@ -36,11 +36,13 @@
                 }
                 const response = await fetch("http://127.0.0.1:8000/api/user/login", options);
                 const data = await response.json();
-                //console.log(data)
-                localStorage.setItem('authToken', data.token)
-                localStorage.setItem('rol', data.rol)
-                //console.log(localStorage.getItem('authToken'));
-                this.$router.replace({path: '/semesters'});
+                if(data.code == 200 ){
+                    localStorage.setItem('authToken', data.token)
+                    localStorage.setItem('rol', data.rol)
+                    this.$router.replace({path: '/semesters'});
+                }else{
+                    window.alert("Usuario o contraseña incorrectos");
+                }
             }
         }
     }

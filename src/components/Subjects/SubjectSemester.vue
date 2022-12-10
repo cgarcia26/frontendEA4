@@ -50,32 +50,32 @@
                 <div class="modal-body">
                     <form>
                         <div class="mb-3">
-                            <label for="name" class="form-label">Nombre</label>
-                            <input type="text" class="form-control" id="name" v-model="subject.name" readonly>
+                            <label for="name" class="h5">Nombre:</label>
+                            <p for="name"  class="h6">{{ subject.name }}</p>
                         </div>
                         <div class="mb-3">
-                            <label for="credits" class="form-label">Créditos</label>
-                            <input type="text" class="form-control" id="credits" v-model="subject.credits" readonly>
+                            <label for="credits" class="h5">Créditos:</label>
+                            <p for="name"  class="h6">{{ subject.credits }}</p>
                         </div>
                         <div class="mb-3">
-                            <label for="subject_prerequisite" class="form-label">Prerequisitos Asignaturas</label>
-                            <input type="text" class="form-control" id="subject_prerequisite" v-model="subject.subject_prerequisite" readonly>
+                            <label for="subject_prerequisite" class="h5">Prerequisitos Asignaturas:</label>
+                            <p for="name"  class="h6">{{ subject.subject_prerequisite }}</p>
                         </div>
                         <div class="mb-3">
-                            <label for="autonomous_hours" class="form-label">Horas Autónomas</label>
-                            <input type="text" class="form-control" id="autonomous_hours" v-model="subject.autonomous_hours" readonly>
+                            <label for="autonomous_hours" class="h5">Horas Autónomas:</label>
+                            <p for="name"  class="h6">{{ subject.autonomous_hours }}</p>
                         </div>
                         <div class="mb-3">
-                            <label for="directed_hours" class="form-label">Horas Dirigidas</label>
-                            <input type="text" class="form-control" id="directed_hours" v-model="subject.directed_hours" readonly>
+                            <label for="directed_hours" class="h5">Horas Dirigidas:</label>
+                            <p for="name"  class="h6">{{ subject.directed_hours }}</p>
                         </div>
                         <div class="mb-3">
-                            <label for="semesterName" class="form-label">Semestre</label>
-                            <input type="text" class="form-control" id="semesterName" v-model="subject.semesterName" readonly>
+                            <label for="semesterName" class="h5">Semestre:</label>
+                            <p for="name"  class="h6">{{ subject.semesterName }}</p>
                         </div>
                         <div class="mb-3">
-                            <label for="userName" class="form-label">Docente</label>
-                            <input type="text" class="form-control" id="userName" v-model="subject.userName" readonly>
+                            <label for="userName" class="h5">Docente:</label>
+                            <p for="name"  class="h6">{{ subject.userName }}</p>
                         </div>
                     </form>  
                 </div>
@@ -158,7 +158,7 @@
 
                 this.rol = localStorage.getItem('rol')
 
-                if( this.rol == 3){
+                if( this.rol == 1){
                     return true
                 }else{
                     return false
